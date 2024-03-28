@@ -1,0 +1,44 @@
+.main
+{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #2f5ea3, #295191, #234480, #1c376f, #152b5f);
+    
+}
+
+.title
+{
+    margin-top: 5% !important;
+    color: white;
+    font-family: "Great Vibes",cursive !important;
+    font-style: italic;
+    font-size: 5em !important;
+    margin-bottom: 10px !important;
+    transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    
+}
+@keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+  }
+.button
+{
+    background-color: aliceblue !important;
+    color: black !important;
+    font-weight: bold !important;
+    margin-top: 5em !important;
+    width: 10em !important;
+    height: 3em !important;
+
+}
+
+.button:hover
+{
+    background-color: #295191 !important;
+    color: aliceblue !important;
+}
