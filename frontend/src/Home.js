@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <Box>
-
+    <Typography>HIIII</Typography>
     <Box className='main' >
         <Typography variant='h3' className='title'> Bird Classification</Typography>
         {/* <br/> */}
