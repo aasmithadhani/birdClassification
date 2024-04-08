@@ -32,7 +32,7 @@ Installing flask
 pip install flask
 ````
 
-Insatlling flask_cors
+Installing flask_cors
 ````bash
 pip install flask_cors
 ````
