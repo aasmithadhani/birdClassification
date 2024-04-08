@@ -27,6 +27,16 @@ Install the dependencies using the following command:
 pip install -r requirements.txt
 ```
 
+Installing flask
+````bash
+pip install flask
+````
+
+Insatlling flask_cors
+````bash
+pip install flask_cors
+````
+
 usage:
 ```bash
 python app.py
