@@ -10,6 +10,7 @@
     
 }
 
+
 .title
 {
     margin-top: 5% !important;
@@ -35,7 +36,7 @@
     margin-top: 0em !important;
     width: 10em !important;
     height: 3em !important;
-    margin-bottom: 10em !important;
+    /* margin-bottom: 10em !important; */
     
 
 }

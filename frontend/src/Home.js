@@ -10,8 +10,10 @@ import Grid from '@mui/material/Grid';
 const Home = () => {
 
     const domainFileRef = useRef(null);
-    const [data,setData] = useState([])
+    const [data,setData] = useState([]) 
+    const [image,setImage] = useState(null)
 
+    
     const getData = () =>
     {
         if(domainFileRef !== null){
@@ -41,6 +43,19 @@ const Home = () => {
         }   
     }
 
+    const handleChange = (event) =>
+    {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                setImage(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+     
   return (
     <Box>
     <Box className='main' >
@@ -70,8 +85,8 @@ const Home = () => {
             accuracy achieved is 90.5%
             </Typography>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-            <a href="#section"><Button className = 'button'>Get Started </Button></a>
-                    </Box>
+                <a href="#section"><Button className = 'button'>Get Started </Button></a>
+            </Box>
             
             </Grid>
             <Grid item xs={12} sm={12} lg={4} md={6}>
@@ -86,13 +101,18 @@ const Home = () => {
 
         
     </Box>
-    <Box sx={{height:'100vh', padding:10 }} id='section'>
-        <Typography variant='h4' sx={{ color:'#295191'}}>Upload an Image</Typography>
-        
-        <input type='file' ref={domainFileRef}></input>
-        <Button className = 'button' onClick={getData}>Submit </Button>
+    <Box sx={{height:'100vh', padding:10, }} id='section'>
+        <Typography variant='h4' sx={{ color:'#295191', marginBottom:'2em'}}>Upload an Image</Typography>
 
-        <Typography>{data}</Typography>
+        <input type='file' ref={domainFileRef} onChange={handleChange}></input>      
+        <Button className = 'button' onClick={getData}>Submit </Button>
+        <Box>
+        {image && <img src={image} alt="Preview" style={{ marginTop: 10, maxWidth: '100%', maxHeight: 300 }} />}
+
+        </Box>
+        {data.length > 0 && (
+                    <Typography style={{ marginTop: '1em', fontWeight: 'bolder' }}>Result: {data}</Typography>
+                )}
 
     </Box>
     </Box>
